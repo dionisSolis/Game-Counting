@@ -1,0 +1,40 @@
+using System;
+namespace train
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int firstDigit, secondDigit;
+            int resultCorrect, resultUser;
+            int count;
+            int score = 0;
+
+            Console.WriteLine("Добро пожаловать в тренажер для тренировки устного счета!");
+
+            for (count = 0; count < 10; count++)
+            {
+                Console.WriteLine($"\nВаш счет: {score}, Пример № {count + 1}");
+                firstDigit = random.Next(0, 21);
+                secondDigit = random.Next(0, 21);
+                resultCorrect = firstDigit * secondDigit;
+                Console.Write($"{firstDigit} * {secondDigit} = ");
+                resultUser = int.Parse(Console.ReadLine());
+
+                if (resultCorrect == resultUser)
+                {
+                    Console.WriteLine("Верно!");
+                    score += 1;
+                }
+                else
+                {
+                    Console.WriteLine($"Ошибка! Правильный ответ: {resultCorrect}\n Нажмите любую кнопку для продолжения");
+                    Console.ReadKey();
+                }
+            }
+
+            Console.WriteLine($"\nИгра закончена! Счет: {score}");
+        }
+    }
+}
