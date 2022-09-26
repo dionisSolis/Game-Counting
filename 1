@@ -8,14 +8,14 @@ namespace train
             Random random = new Random();
             int firstDigit, secondDigit;
             int resultCorrect, resultUser;
-            int count;
+            int round;
             int score = 0;
 
             Console.WriteLine("Добро пожаловать в тренажер для тренировки устного счета!");
 
-            for (count = 0; count < 10; count++)
+            for (round = 0; round < 10; round++)
             {
-                Console.WriteLine($"\nВаш счет: {score}, Пример № {count + 1}");
+                Console.WriteLine($"\nПример № {round + 1}");
                 firstDigit = random.Next(0, 21);
                 secondDigit = random.Next(0, 21);
                 resultCorrect = firstDigit * secondDigit;
